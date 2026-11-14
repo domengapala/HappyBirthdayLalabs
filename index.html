@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Mary 🤍</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23C8315A' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#FDFCF9">
+    <meta name="color-scheme" content="only light">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Happy Birthday, Mary 🤍">
+    <meta property="og:description" content="A little corner of the internet made just for you.">
+    <!-- Palitan ng BUONG URL ng hero photo pagkatapos i-host, hal. https://pangalan.netlify.app/images/hero.jpg -->
+    <meta property="og:image" content="images/hero.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Paper Grain Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Cinematic Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <p id="load-text-1" class="loading-text">Something special is waiting for you...</p>
+            <p id="load-text-2" class="loading-text">For someone very special...</p>
+            <p id="load-text-3" class="loading-text">Happy Birthday, Mary 🤍</p>
+            <div class="loading-line-container"><div class="loading-line"></div></div>
+            <button id="enter-btn" class="outline-btn">Open me ♥</button>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress-container">
+        <div id="scroll-chapter">00 — BEGINNING</div>
+        <div class="scroll-line"><div id="scroll-bar"></div></div>
+    </div>
+
+    <!-- Minimal Navigation -->
+    <nav id="navbar">
+        <a class="nav-logo" href="#home" aria-label="Back to top"><span>M</span><i>♥</i><span>L</span></a>
+        <div class="hamburger" id="hamburger">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Story</a></li>
+            <li><a href="#first-date">Nov 30</a></li>
+            <li><a href="#gallery">Pieces of Us</a></li>
+            <li><a href="#letters">Letters</a></li>
+        </ul>
+    </nav>
+
+    <!-- Upgraded Music Player -->
+    <div id="music-player">
+        <div class="disc-container">
+            <svg class="record-disc" id="record-disc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+        </div>
+        <div class="music-details">
+            <div class="music-header">
+                <span class="song-title">Risk It All</span>
+                <span class="now-playing" id="now-playing-text">Paused</span>
+            </div>
+            <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <div class="progress-bar-bg" id="progress-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
+                <span id="total-duration">0:00</span>
+            </div>
+        </div>
+        <button id="play-pause-btn" aria-label="Play Music">
+            <svg id="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg>
+            <svg id="pause-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="section hero-section" data-chapter="00 — FOR YOU">
+        <div class="hero-content fade-in-up">
+            <p class="hero-subtitle">A little corner of the internet made just for you.</p>
+            <h1 class="hero-title">Happy Birthday,<br><i>Mary</i> 🤍</h1>
+            <button id="open-story-btn" class="outline-btn">
+                <span>Open Our Story</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </button>
+        </div>
+        <figure class="hero-polaroid fade-in-up delay-1">
+            <img id="hero-img" alt="Mary" fetchpriority="high">
+            <figcaption>Mary, 2026 🤍</figcaption>
+            <span class="hero-sticker"><span>Lalabs</span><span>♥</span></span>
+        </figure>
+    </header>
+
+    <!-- Memory Counters -->
+    <section id="counters" class="section counter-section">
+        <div class="container counter-grid">
+            <div class="counter-box fade-in-up delay-1">
+                <h3 class="counter-number" id="days-story" data-target="1">0</h3>
+                <p class="counter-label">Days since that story reply</p>
+            </div>
+            <div class="counter-box fade-in-up delay-2">
+                <h3 class="counter-number" id="days-date" data-target="365">0</h3>
+                <p class="counter-label">Days since our first date</p>
+            </div>
+            <div class="counter-box fade-in-up delay-3">
+                <h3 class="counter-infinity">∞</h3>
+                <p class="counter-label">Little moments worth remembering</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section id="story" class="section timeline-section alt-bg" data-chapter="01 — OUR STORY">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Our Story</h2>
+            <div class="timeline" id="timeline-container">
+                <!-- Timeline items injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Memory Cards -->
+    <section id="memory-cards" class="section memory-cards-section" data-chapter="02 — LITTLE THINGS">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Pieces I Remember</h2>
+            <p class="section-note">tap a note to flip it</p>
+            <div class="cards-grid" id="cards-container">
+                <!-- Flip Cards injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- First Date Section -->
+    <section id="first-date" class="section first-date-section alt-bg" data-chapter="03 — NOVEMBER 30">
+        <div class="container first-date-layout">
+            <div class="fd-text-content fade-in-up">
+                <p class="mono-date">11 . 30 . 2025</p>
+                <h2 class="cinematic-heading">One Year Since<br>Our First Date</h2>
+                <p class="first-date-caption">One ordinary day became one of my favorite memories.</p>
+                <p class="first-date-reveal hidden" id="fd-reveal">And one year later, I’m still grateful that it happened.</p>
+            </div>
+            <div class="fd-images fade-in-up delay-1">
+                <div class="photo-stack" id="fd-photo-stack">
+                    <img id="fd-stack-1" alt="First Date Memory" class="stack-img">
+                    <img id="fd-stack-2" alt="First Date Memory" class="stack-img">
+                    <img id="fd-stack-3" alt="First Date Memory" class="stack-img">
+                    <div class="stack-hint">Tap to open</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Exhibition -->
+    <section id="gallery" class="section gallery-section" data-chapter="04 — THE GALLERY">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Little Pieces of Us</h2>
+            <div class="scattered-gallery" id="gallery-container">
+                <!-- Gallery injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Things I Love About You -->
+    <section id="things-i-love" class="section things-section alt-bg" data-chapter="05 — APPRECIATION">
+        <div class="container text-center">
+            <h2 class="section-title fade-in-up">Things I Notice</h2>
+            <p class="section-note">tap one to read more</p>
+            <div class="things-grid" id="things-container">
+                <!-- Clickable tags injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Open When Envelopes -->
+    <section id="open-when" class="section open-when-section" data-chapter="06 — OPEN WHEN">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Open When...</h2>
+            <div class="envelope-grid" id="envelopes-container">
+                <!-- Envelopes injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Letters Section (Now with Clickable Envelopes para 'di nakakangawit i-scroll) -->
+    <section id="letters" class="section letter-section alt-bg" data-chapter="07 — LETTERS">
+        <div class="container text-center fade-in-up">
+            <h2 class="section-title">Messages For You</h2>
+            
+            <div class="letter-buttons-container">
+                <div class="letter-envelope" id="open-lsm-btn">
+                    <span class="letter-seal">♥</span>
+                    <span class="letter-for">The long one</span>
+                    <h3 class="env-title">What I Never Want You To Forget</h3>
+                    <span class="env-subtitle"></span>
+                </div>
+                <div class="letter-envelope" id="open-bday-btn">
+                    <span class="letter-seal">♥</span>
+                    <span class="letter-for">For today</span>
+                    <h3 class="env-title">Happy Birthday, Lalabs</h3>
+                    <span class="env-subtitle"></span>
+                </div>
+                <div class="letter-envelope" id="open-nov30-btn">
+                    <span class="letter-seal">♥</span>
+                    <span class="letter-for">Nov 30</span>
+                    <h3 class="env-title">One Year Later</h3>
+                    <span class="env-subtitle"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cinematic "If I Could Go Back" -->
+    <section id="if-i-could" class="section parallax-section" data-chapter="08 — LOOKING BACK">
+        <div class="parallax-content">
+            <h2 class="cinematic-title fade-in-up">If I Could Go Back</h2>
+            <div class="cinematic-text" id="cinematic-text-container">
+                <p class="fade-in-up delay-1">If I could go back to the beginning, I'd still reply to that story.</p>
+                <p class="fade-in-up delay-2">I'd still get to know you.</p>
+                <p class="fade-in-up delay-3">I'd still take the chance.</p>
+                <p class="fade-in-up delay-4">And knowing everything I know now, I'd still choose you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Cinematic Moment -->
+    <section id="one-year-moment" class="section full-cinematic" data-chapter="09 — ONE YEAR">
+        <div class="moment-content text-center">
+            <p class="mono-date fade-in-up delay-1">11 . 30 . 2025 &nbsp;→&nbsp; 11 . 30 . 2026</p>
+            <h2 class="moment-title fade-in-up delay-2">One year.</h2>
+            <p class="moment-text fade-in-up delay-3">And somehow, I still want more memories with you.</p>
+            <p class="moment-text small-text fade-in-up delay-4">This is only the beginning.</p>
+        </div>
+    </section>
+
+    <!-- Outro & Secret Message -->
+    <section id="outro" class="section outro-section alt-bg" data-chapter="10 — THE END">
+        <div class="outro-content fade-in-up text-center">
+            <button id="secret-btn" class="secret-btn">P.S. There's one more thing...</button>
+            <br><br>
+            <h2 class="outro-title">Happy Birthday, <i>Mary.</i> 🤍</h2>
+            <p class="outro-text">Thank you for being part of my life.</p>
+            <button id="replay-btn" class="outline-btn small-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                <span>Replay Our Story</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- REUSABLE FULLSCREEN LIGHTBOX -->
+    <div id="lightbox" class="lightbox-container hidden">
+        <div class="lightbox-bg"></div>
+        <button class="lightbox-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="lightbox-content">
+            <button class="lightbox-prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+            <div class="lightbox-image-wrapper">
+                <img id="lightbox-img" alt="Gallery Image">
+                <div class="lightbox-info">
+                    <span id="lightbox-counter" class="mono-date" style="color: white;">01 / 12</span>
+                    <p id="lightbox-caption" class="lightbox-caption">Caption here</p>
+                </div>
+            </div>
+            <button class="lightbox-next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+    </div>
+
+    <!-- REUSABLE MODAL (For Letters, Timeline, Open When, etc.) -->
+    <div id="generic-modal" class="generic-modal hidden">
+        <div class="modal-bg"></div>
+        <div class="modal-card">
+            <button class="modal-close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+            <div id="modal-content-area"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
